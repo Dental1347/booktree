@@ -69,16 +69,21 @@ def searchMAM(cfg, titleFilename, authors, extension):
                 
                 params = {
                     "tor": {
-                        "text": search,  # The search string.
-                        "srchIn": {
-                            "title": "true",
-                            "author": "true",
-                            "fileTypes": "true",
-                            "filenames": "true"
-                        },
-                        "main_cat": mam_categories
+                        "text": search,
+                        "srchIn": [
+                            "title",
+                            "author",
+                            "fileTypes",
+                            "filenames"
+                        ],
+                        "main_cat": mam_categories,
+                        "searchType": "all",
+                        "searchIn": "torrents",
+                        "cat": [],
+                        "sortType": "default",
+                        "startNumber": 0
                     },
-                    "perpage":50
+                    "thumbnail": "false"
                 }
 
                 if (verbose):
